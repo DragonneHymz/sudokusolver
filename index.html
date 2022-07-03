@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sudoku Solver</title>
+    <!--css-->
+    <link rel="stylesheet" href="style.css">
+    <!--icon link-->
+    <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
+    <!--google fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+    <header>
+        <div class="title">Sudoku Solver</div>
+    </header>
+    <main>
+        <div style="font-size: 20px;">Input known numbers:</div>
+        <div>Use 'tab' key to navigate boxes</div>
+        <br>
+        <div>
+            <div class="big-grid">
+                <div class="medium-grid">
+                    <input type="text" maxlength="1" id="0" tabindex="10">
+                    <input type="text" maxlength="1" id="1" tabindex="10">
+                    <input type="text" maxlength="1" id="2" tabindex="10">
+                    <input type="text" maxlength="1" id="9" tabindex="11">
+                    <input type="text" maxlength="1" id="10" tabindex="11">
+                    <input type="text" maxlength="1" id="11" tabindex="11">
+                    <input type="text" maxlength="1" id="18" tabindex="12">
+                    <input type="text" maxlength="1" id="19" tabindex="12">
+                    <input type="text" maxlength="1" id="20" tabindex="12">
+                </div>
+                <div class="medium-grid">
+                    <input type="text" maxlength="1" id="3" tabindex="10">
+                    <input type="text" maxlength="1" id="4" tabindex="10">
+                    <input type="text" maxlength="1" id="5" tabindex="10">
+                    <input type="text" maxlength="1" id="12" tabindex="11">
+                    <input type="text" maxlength="1" id="13" tabindex="11">
+                    <input type="text" maxlength="1" id="14" tabindex="11">
+                    <input type="text" maxlength="1" id="21" tabindex="12">
+                    <input type="text" maxlength="1" id="22" tabindex="12">
+                    <input type="text" maxlength="1" id="23" tabindex="12">
+                </div>
+                <div class="medium-grid">
+                    <input type="text" maxlength="1" id="6" tabindex="10">
+                    <input type="text" maxlength="1" id="7" tabindex="10">
+                    <input type="text" maxlength="1" id="8" tabindex="10">
+                    <input type="text" maxlength="1" id="15" tabindex="11">
+                    <input type="text" maxlength="1" id="16" tabindex="11">
+                    <input type="text" maxlength="1" id="17" tabindex="11">
+                    <input type="text" maxlength="1" id="24" tabindex="12">
+                    <input type="text" maxlength="1" id="25" tabindex="12">
+                    <input type="text" maxlength="1" id="26" tabindex="12">
+                </div>
+                <div class="medium-grid">
+                    <input type="text" maxlength="1" id="27" tabindex="13">
+                    <input type="text" maxlength="1" id="28" tabindex="13">
+                    <input type="text" maxlength="1" id="29" tabindex="13">
+                    <input type="text" maxlength="1" id="36" tabindex="14">
+                    <input type="text" maxlength="1" id="37" tabindex="14">
+                    <input type="text" maxlength="1" id="38" tabindex="14">
+                    <input type="text" maxlength="1" id="45" tabindex="15">
+                    <input type="text" maxlength="1" id="46" tabindex="15">
+                    <input type="text" maxlength="1" id="47" tabindex="15">
+                </div>
+                <div class="medium-grid">
+                    <input type="text" maxlength="1" id="30" tabindex="13">
+                    <input type="text" maxlength="1" id="31" tabindex="13">
+                    <input type="text" maxlength="1" id="32" tabindex="13">
+                    <input type="text" maxlength="1" id="39" tabindex="14">
+                    <input type="text" maxlength="1" id="40" tabindex="14">
+                    <input type="text" maxlength="1" id="41" tabindex="14">
+                    <input type="text" maxlength="1" id="48" tabindex="15">
+                    <input type="text" maxlength="1" id="49" tabindex="15">
+                    <input type="text" maxlength="1" id="50" tabindex="15">
+                </div>
+                <div class="medium-grid">
+                    <input type="text" maxlength="1" id="33" tabindex="13">
+                    <input type="text" maxlength="1" id="34" tabindex="13">
+                    <input type="text" maxlength="1" id="35" tabindex="13">
+                    <input type="text" maxlength="1" id="42" tabindex="14">
+                    <input type="text" maxlength="1" id="43" tabindex="14">
+                    <input type="text" maxlength="1" id="44" tabindex="14">
+                    <input type="text" maxlength="1" id="51" tabindex="15">
+                    <input type="text" maxlength="1" id="52" tabindex="15">
+                    <input type="text" maxlength="1" id="53" tabindex="15">
+                </div>
+                <div class="medium-grid">
+                    <input type="text" maxlength="1" id="54" tabindex="16">
+                    <input type="text" maxlength="1" id="55" tabindex="16">
+                    <input type="text" maxlength="1" id="56" tabindex="16">
+                    <input type="text" maxlength="1" id="63" tabindex="17">
+                    <input type="text" maxlength="1" id="64" tabindex="17">
+                    <input type="text" maxlength="1" id="65" tabindex="17">
+                    <input type="text" maxlength="1" id="72" tabindex="18">
+                    <input type="text" maxlength="1" id="73" tabindex="18">
+                    <input type="text" maxlength="1" id="74" tabindex="18">
+                </div>
+                <div class="medium-grid">
+                    <input type="text" maxlength="1" id="57" tabindex="16">
+                    <input type="text" maxlength="1" id="58" tabindex="16">
+                    <input type="text" maxlength="1" id="59" tabindex="16">
+                    <input type="text" maxlength="1" id="66" tabindex="17">
+                    <input type="text" maxlength="1" id="67" tabindex="17">
+                    <input type="text" maxlength="1" id="68" tabindex="17">
+                    <input type="text" maxlength="1" id="75" tabindex="18">
+                    <input type="text" maxlength="1" id="76" tabindex="18">
+                    <input type="text" maxlength="1" id="77" tabindex="18">
+                </div>
+                <div class="medium-grid">
+                    <input type="text" maxlength="1" id="60" tabindex="16">
+                    <input type="text" maxlength="1" id="61" tabindex="16">
+                    <input type="text" maxlength="1" id="62" tabindex="16">
+                    <input type="text" maxlength="1" id="69" tabindex="17">
+                    <input type="text" maxlength="1" id="70" tabindex="17">
+                    <input type="text" maxlength="1" id="71" tabindex="17">
+                    <input type="text" maxlength="1" id="78" tabindex="18">
+                    <input type="text" maxlength="1" id="79" tabindex="18">
+                    <input type="text" maxlength="1" id="80" tabindex="18">
+                </div>
+            </div>
+        </div>
+        <div class="button-container"><button class="button" onclick="clicked()">Submit</button></div>
+    </main>
+
+</body>
+<script>
+    for (let i = 0; i < 81; i++) {
+        document.getElementById(String(i)).setAttribute("value", "-")
+    }
+</script>
+<script src="solve.js"></script>
+
+</html>
