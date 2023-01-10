@@ -75,6 +75,7 @@ main {
     align-items: center;
     justify-content: center;
     padding-top: 20px;
+    margin-right: 10px;
 }
 
 .button {
@@ -87,9 +88,27 @@ main {
     transition: color .5s, background-color .5s, border .5s;
 }
 
+.buttonsm {
+    width: 100px;
+    height: 30px;
+    font-family: 'Roboto', Arial;
+    font-size: 15px;
+    background-color: rgb(128, 232, 255);
+    border-radius: 20px;
+    transition: color .5s, background-color .5s, border .5s;
+}
+
+.buttonsm:hover,
 .button:hover {
     color: rgb(128, 232, 255);
     background-color: rgb(0, 0, 36);
     cursor: pointer;
     border: 1px solid rgb(128, 232, 255);
+}
+
+.bottom {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
 }
